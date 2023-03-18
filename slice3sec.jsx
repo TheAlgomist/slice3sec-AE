@@ -43,7 +43,7 @@
         // Create a new composition containing the sliced layer
         function createSlicedComp(layer) {
             var compName = comp.name + "_sliced_" + (startTime + 1);
-            var newComp = app.project.items.addComp(compName, comp.width, comp.height, comp.pixelAspect, comp.duration, comp.frameRate);
+            var newComp = app.project.items.addComp(compName, comp.width, comp.height, comp.pixelAspect, sliceDuration, comp.frameRate);
             newComp.layers.add(layer.source);
             return newComp;
         }
