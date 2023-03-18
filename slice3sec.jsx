@@ -40,11 +40,12 @@
         // Remove the original Pre-Comp layer
         preComp.remove();
 
-        // Create a new composition containing the sliced layer
+        // Create a new pre-composition containing the sliced layer
         function createSlicedComp(layer) {
             var compName = comp.name + "_sliced_" + (startTime + 1);
             var newComp = app.project.items.addComp(compName, comp.width, comp.height, comp.pixelAspect, sliceDuration, comp.frameRate);
             newComp.layers.add(layer.source);
+            newComp.layer(1).startTime = -layer.startTime; // Adjust layer's start time within the new composition
             return newComp;
         }
 
